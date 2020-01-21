@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <org.webrtc.SurfaceViewRenderer
+            android:id="@+id/localVideoView"
+            android:layout_width="@dimen/local_video_width"
+            android:layout_height="@dimen/local_video_height"
+            android:layout_gravity="top|end"
+            android:layout_margin="@dimen/margin_medium"
+            android:visibility="gone"/>
+
+    <org.webrtc.SurfaceViewRenderer
+            android:id="@+id/remoteVideoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+    <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
+                                               android:layout_height="wrap_content"
+                                               android:id="@+id/recycler_user">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:background="@drawable/background_splash"
+                    android:id="@+id/rl_incoming_call">
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:textSize="30sp"
+                  android:layout_marginTop="40dp"
+                  android:text="Username"
+                  android:id="@+id/tv_user_name"
+                  android:textColor="@color/white"
+                  android:gravity="center"/>
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:textSize="18sp"
+                  android:layout_marginTop="10dp"
+                  android:text="Incoming call"
+                  android:layout_below="@+id/tv_user_name"
+                  android:textColor="@color/white"
+                  android:gravity="center"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2dp"
+                android:scaleType="centerCrop"
+                android:id="@+id/img_profile"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="200dp"
+                android:src="@drawable/sample"/>
+
+        <ImageButton
+                android:id="@+id/pickCallButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_profile"
+                android:layout_marginTop="250dp"
+                android:layout_centerHorizontal="true"
+                android:background="?selectableItemBackgroundBorderless"
+                android:contentDescription="@string/desc_hangup"
+                android:src="@drawable/call_pick"/>
+
+    </RelativeLayout>
+
+    <Chronometer
+            android:id="@+id/chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            android:layout_marginBottom="120dp"
+            app:layout_anchor="@id/buttonPanel"
+            app:layout_anchorGravity="center_horizontal"/>
+
+    <LinearLayout
+            android:id="@+id/buttonPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:gravity="center"
+            android:visibility="gone">
+
+        <ToggleButton
+                android:id="@+id/microphoneEnabledToggle"
+                style="@style/ToggleButtonBorderlessTextless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:button="@drawable/ic_microphone_toggle"
+                android:contentDescription="@string/desc_toggle_microphone"
+                android:minHeight="@dimen/toggle_button_min_size"
+                android:minWidth="@dimen/toggle_button_min_size"/>
+
+        <ImageButton
+                android:id="@+id/disconnectButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:background="?selectableItemBackgroundBorderless"
+                android:contentDescription="@string/desc_hangup"
+                android:src="@drawable/call_end_button"/>
+
+        <ToggleButton
+                android:id="@+id/cameraEnabledToggle"
+                style="@style/ToggleButtonBorderlessTextless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:button="@drawable/ic_videocam_on_off_toggle"
+                android:contentDescription="@string/desc_toggle_camera"
+                android:minHeight="@dimen/toggle_button_min_size"
+                android:minWidth="@dimen/toggle_button_min_size"/>
+
+        <ImageButton
+                android:id="@+id/switchCameraButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/desc_switch_camera"
+                android:padding="@dimen/margin_medium"
+                app:srcCompat="@drawable/switch_camera"/>
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

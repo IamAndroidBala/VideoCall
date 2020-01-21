@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/tv_user_name"
+                  android:textColor="#000"
+                  android:layout_marginLeft="10dp"
+                  android:textSize="18sp"/>
+
+        <ImageView android:layout_width="30dp" android:layout_height="30dp"
+                   android:layout_alignParentRight="true"
+                   android:id="@+id/img_vdo_call"
+                   android:layout_marginRight="10dp"
+                   android:src="@drawable/ic_video_call_black_24dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

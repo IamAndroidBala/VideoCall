@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:background="@drawable/background_splash"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textSize="30sp"
+              android:layout_marginTop="40dp"
+              android:text="Username"
+              android:id="@+id/tv_user_name"
+              android:textColor="@color/white"
+              android:gravity="center"/>
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textSize="18sp"
+              android:layout_marginTop="10dp"
+              android:text="Incoming call"
+              android:layout_below="@+id/tv_user_name"
+              android:textColor="@color/white"
+              android:gravity="center"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="2dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/img_profile"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="200dp"
+            android:src="@drawable/sample"/>
+
+    <ImageButton
+            android:id="@+id/connectButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_profile"
+            android:layout_marginTop="250dp"
+            android:layout_centerHorizontal="true"
+            android:background="?selectableItemBackgroundBorderless"
+            android:contentDescription="@string/desc_hangup"
+            android:src="@drawable/call_pick"/>
+
+</RelativeLayout>
